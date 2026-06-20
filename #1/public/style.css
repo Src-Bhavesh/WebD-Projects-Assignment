@@ -1,0 +1,51 @@
+
+    body {
+        background-color: rgb(32, 33, 36);
+        color: rgb(232, 234, 237);
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+ 
+    form {
+        background: #202124;
+        border: 1px solid #5f6368;
+        border-radius: 8px;
+        padding: 15px;
+        max-width: 500px;
+        margin: 0 auto 40px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    #submit{
+      padding: 10px 20px;
+      background-color: #a7a8a9;
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      border: 1px solid black;
+    }
+
+    input[type="text"] {
+        background-color:#202124;
+        border: 1px solid rgb(170, 170, 168);
+        border-radius: 5px;
+        color: white;
+        padding: 10px 20px;
+        flex: 1;
+        
+    }
+
+    .task-list {
+        display: grid;
+        gap: 16px;
+    }
+
+ 
+    p {
+        background: #202124;
+        border: 1px solid #5f6368;
+        border-radius: 8px;
+        padding: 20px;
+        min-height: 50px;
+    }
