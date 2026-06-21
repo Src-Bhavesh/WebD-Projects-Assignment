@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  min-height: 100vh;
+  padding: 60px 10%;
+}
+
+/* Glassmorphism subtle border framing */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.14),
+              inset 0 0 120px rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Back to dashboard link */
+body > a {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+body > a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #a0a0a0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+body > a:hover {
+  color: #e5e5e5;
+}
+
+body > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Record text formatting */
+p {
+  font-size: 0.9rem;
+  color: #999999;
+  max-width: 400px;
+  line-height: 1.6;
+  margin: 4px 0;
+}
+
+/* Make the mobile Brand the bold primary title element */
+/* Replace p:first-of-type with this class selector */
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #e5e5e5;
+  letter-spacing: -0.5px;
+  margin-top: 20px;
+}
+
+/* Edit / Delete action links */
+a[href^="/edit"],
+a[href^="/delete"] {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 32px;
+  margin-top: 12px;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Red underline accent tracking for Delete button */
+#a1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e42f2f;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+#a1:hover {
+  color: #ef3232;
+}
+
+#a1:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Green underline accent tracking for Edit button */
+#a2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

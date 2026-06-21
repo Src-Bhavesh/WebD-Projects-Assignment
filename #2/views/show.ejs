@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/show.css">
+</head>
+<body>
+
+  <a href="/">Back To DashBoard</a>
+
+<form action="/search" method="post">
+    <input type="search" name="query" placeholder="Search...">
+    <input type="submit" value="Search">
+</form>
+  
+  <% if (data) { %>
+    <% data.forEach((x) => { %>
+      <p>Brand: <%= x.brand %></p>
+      <p>Model: <%= x.model %></p>
+      <p>RAM: <%= x.ram %></p>
+      <p>Storage: <%= x.storage %></p>
+      <p>Price: <%= x.price %></p>
+      <a href="/delete/<%= x._id %>" id="a1">Delete</a>
+      <a href="/edit/<%= x._id %>" id="a2">Edit</a>
+      <hr> <% }) %>
+  <% } %>
+
+</body>
+</html>

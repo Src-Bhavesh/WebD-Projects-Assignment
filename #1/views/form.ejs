@@ -3,21 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>To-Do List</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <div class="rain-container"></div>
 
   <form action="/create" method="post">
-    <input type="text" name="task" id="">
-    <input type="submit" id="submit">
+    <input type="text" name="task" placeholder="Enter a task..." required>
+    <input type="submit" id="submit" value="Add Task">
   </form>
 
-  <% if (tasks) { %>
-    <% tasks.forEach(function(x) { %>
-        <p><%= x.task %></p>
-    <% }) %>
-  <% } %>
-  
+  <div class="task-list">
+    <% if (tasks) { %>
+        <% tasks.forEach(function(x) { %>
+            <p class="task-item">
+                <span><%= x.task %></span>
+                <span>
+                    <a href="/edit/<%= x._id %>">Edit</a>
+                    <a href="/delete/<%= x._id %>">Delete</a>
+                </span>
+            </p>
+        <% }) %>
+    <% } %>
+  </div>
+
+  <script>
+    function createRain() {
+        const container = document.querySelector('.rain-container');
+        for (let i = 0; i < 50; i++) {
+            const drop = document.createElement('div');
+            drop.className = 'drop';
+            drop.style.left = Math.random() * 100 + 'vw';
+            drop.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's';
+            drop.style.opacity = Math.random();
+            container.appendChild(drop);
+        }
+    }
+    createRain();
+  </script>
 </body>
 </html>

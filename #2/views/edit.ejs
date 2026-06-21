@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+
+  <h1>Edit Device</h1>
+  <p class="subtitle">Update the fields below to modify this inventory record.</p>
+  
+  <form action="/update/<%=data._id%>" method="post">
+    <label for="brand">Brand Name</label>
+    <input type="text" name="brand" id="" value="<%=data.brand%>">
+    <br>
+    <br>
+    <label for="model">Model</label>
+    <input type="text" name="model" id="" value="<%=data.model%>">
+    <br>
+    <br>
+    <label for="ram">RAM</label>
+    <input type="number" name="ram" id="" value="<%=data.ram%>">
+    <br>
+    <br>
+    <label for="storage">Storage</label>
+    <input type="number" name="storage" id="" value="<%=data.ram%>">
+    <br>
+    <br>
+    <label for="price">Price</label>
+    <input type="number" name="price" id="" value="<%=data.price%>">
+    <br>
+    <br>
+    <input type="submit" name="submit" id="">
+  </form>
+  
+</body>
+</html>

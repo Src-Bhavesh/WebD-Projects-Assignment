@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/result.css">
+</head>
+<body>
+  <a href="/">Back To DashBoard</a>
+
+    <% if (mobiles && mobiles.length > 0) { %>
+        <% mobiles.forEach(function(x) { %>
+            <% if (x.brand === srh || x.model === srh) { %>
+                <p>Brand: <%= x.brand %></p>
+                <p>Model: <%= x.model %></p>
+                <p>RAM: <%= x.ram %>GB</p>
+                <p>Storage: <%= x.storage %>GB</p>
+                <p>Price: <%= x.price %></p>
+                <a href="/delete/<%= x._id %>" id="a1">Delete</a>
+                <a href="/edit/<%= x._id %>" id="a2">Edit</a>
+                <hr>
+            <% } %>
+        <% }); %>
+    <% } else { %>
+        <p>No results found.</p>
+    <% } %>
+</body>
+</html>

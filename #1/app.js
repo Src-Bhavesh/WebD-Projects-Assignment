@@ -38,6 +38,24 @@ app.post('/create',async(req,res)=>{
 })
 
 
+app.get('/delete/:id', async (req, res) => {
+  await todo.findByIdAndDelete(req.params.id);
+  res.redirect('/insert');
+});
+
+
+app.get('/edit/:id', async (req, res) => {
+  let taskToEdit = await todo.findById(req.params.id);
+  res.render('edit', { task: taskToEdit });
+});
+
+
+app.post('/update/:id', async (req, res) => {
+  await todo.findByIdAndUpdate(req.params.id, { task: req.body.task });
+  res.redirect('/insert');
+});
+
+
 
 app.listen(3000,(req,res)=>{
   console.log("server is running at 3000");
